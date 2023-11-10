@@ -1,0 +1,30 @@
+@use 'colors';
+
+@mixin circle($radius, $border-color) {
+  width: 20vmin;
+  height: 10vmin;
+  border: 4px solid $border-color;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-left-width: 1vmin;
+  border-right-width: 0.2vmin;
+}
+
+.half-circle {
+  @include circle(10vmin, colors.$light-green);
+  border-top-left-radius: 10vmin;
+  border-top-right-radius: 10vmin;
+  border-bottom: 0;
+}
+
+.upside-down-half-circle {
+  @include circle(10vmin, colors.$light-green);
+  position: absolute;
+  top: 410px;
+  border-bottom-left-radius: 10vmin;
+  border-bottom-right-radius: 10vmin;
+  border-top: 0;
+  border-left-width: 0.2vmin;
+  border-right-width: 1vmin;
+}

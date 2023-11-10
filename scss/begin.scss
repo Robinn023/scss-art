@@ -1,0 +1,29 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    background: black;
+  }
+  
+  .container{
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .orange-line{
+    position: absolute;
+    border: 1px solid orange;
+    height: 1px;
+    width: 150px;
+    top: 400px;
+  }

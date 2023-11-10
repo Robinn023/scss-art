@@ -1,0 +1,133 @@
+@use 'colors';
+
+.letters{
+  position: absolute;
+  top: 0px;
+  left: -12px;
+}
+
+@mixin line($left, $top) {
+  position: absolute;
+  width: 12px;
+  height: 0px;
+  left: $left;
+  top: $top; 
+  border-bottom: 3px solid colors.$white;
+  border-right: 3px solid colors.$white;
+  border-radius: 20px;
+}
+
+@mixin letter($left, $top) {
+  content: "";
+  position: absolute;
+  left: $left;
+  top: $top;
+  height: 30px;
+  width: 33px;
+  border-radius: 0 14.5px 14.5px 0;
+  border: 10px solid colors.$white;
+}
+
+@mixin letter-after($left, $bottom) {
+  content: "";
+  position: absolute;
+  left: $left;
+  bottom: $bottom;
+  height: 30px;
+  width: 35px;
+  background: transparent;
+  border-radius: 0 20.5px 20.5px 0;
+  border: 10px solid colors.$white;
+}
+
+.letter-b {
+  position: relative;
+  height: 40px;
+  color: colors.$white;
+  left: 30px;
+  top: 25px;
+  border-width: 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent transparent;
+  
+  &::before {
+    @include letter(-10px, -10px);
+  }
+  
+  &::after {
+    @include letter-after(-10px, -20px);
+  }
+}
+
+.line-b {
+  @include line(-20px, -10px);
+}
+
+.line-b-bottom {
+  @include line(-20px, 38px);
+}
+
+.line-b-reversed {
+  @include line(37px, -10px);
+}
+
+.line-b-reversed-bottom {
+  @include line(37px, 38px);
+}
+
+.letter-b-reversed {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  color: colors.$white;
+  right: -54px; 
+  top: -15px;
+  border-width: 10px 10px 10px  10px;
+  border-style: solid;
+  border-color: transparent transparent transparent transparent;
+}
+
+.letter-b-reversed::before {
+  content: "";
+  position: absolute;
+  right: -10px; 
+  top: -10px;
+  height: 30px;
+  width: 33px;
+  background: transparent;
+  border-radius: 14.5px 0 0 14.5px; 
+  border: 10px solid colors.$white;
+}
+
+.letter-b-reversed::after {
+  content: "";
+  position: absolute;
+  right: -10px; 
+  bottom: -20px;
+  height: 30px;
+  width: 35px;
+  background: transparent;
+  border-radius: 20.5px 0 0 20.5px; 
+  border: 10px solid colors.$white;
+}
+
+.letter-e {
+  position: absolute;
+  top: 410px;
+  left: 785px;
+  width: 15px;
+  height: 25px;
+  border-width: 3px 0 3px 3px;
+  border-style: solid;
+  border-color: colors.$white;
+}
+
+.letter-e::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 12px;
+  height: 3.5px;
+  background: colors.$white;
+}
